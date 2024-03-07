@@ -30,3 +30,34 @@ int main()
     }
 
 }
+
+
+// #include<stdio.h>
+
+// int main()
+// {
+//     int n;
+
+//     printf("Enter the value of n:");
+//     scanf("%d",&n);
+//     int a[n];
+    
+//     for(int i=0;i<n;i++)
+//     {
+//         printf("Enter %d element :",i);
+//         scanf("%d",&a[i]);
+//     }
+    
+//     for(int i=0;i<n-1;i++)
+//     {
+//         int a1 = a[i];
+//         a[i]=a[i+1];
+//         a[i+1]=a1;
+//     }
+    
+//     for(int i=0;i<n;i++)
+//     {
+//         printf("\nThe arra is : %d",a[i]);
+//     }
+//     return 0;
+// }

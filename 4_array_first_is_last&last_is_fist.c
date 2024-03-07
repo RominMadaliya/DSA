@@ -12,7 +12,7 @@ int main()
 
     for(int i=0;i<n;i++)
     {
-        printf("Enter the arra[%d] Element :",i);
+        printf("Enter the array[%d] Element :",i);
         scanf("%d",&a[i]);      
     }
 
@@ -22,7 +22,7 @@ int main()
     
     for(int i=0;i<n;i++)
     {
-        printf("\nthe arra[%d] Element is : %d",i,a[i]);
+        printf("\nthe array[%d] Element is : %d",i,a[i]);
         
     }
    return 0;
