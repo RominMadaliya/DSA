@@ -39,7 +39,7 @@ int main()
 
     for(int i=0;i<n3;i++)
     {
-        printf("\nThe arra3[%d] Element is : %d",i,a3[i]);
+        printf("\nThe array3[%d] Element is : %d",i,a3[i]);
     }
 
     return 0;
