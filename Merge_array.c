@@ -32,11 +32,12 @@ int main()
     for(int j=0;j<n2;j++)
     {
         a3[i]=a2[j];
+        i++;
     }
 
     for(int v=0;v<n3;v++)
     {
-        printf("%d\n",a3[v]);
+        printf("The array[%d] is : %d\n",v,a3[v]);
     }
 
     return 0;
