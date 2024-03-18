@@ -6,7 +6,7 @@ int rear=-1;
 void Insert_First(int arr[],int n,int num)
 {
     
-    if           
+    if(first==-1 && rear==-1)
     {
         first++;
         rear++;
@@ -40,6 +40,8 @@ void Delete_First(int arr[],int n)
         first++;
     }
 }
+
+
 
 
 void Display(int arr[],int a)

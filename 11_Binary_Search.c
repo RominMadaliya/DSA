@@ -15,6 +15,8 @@ void binry_search(int a1)
 
     mid=count/2;
 
+   // printf("\n\n%d",a[mid]);
+
     while(lower<=higher)
    {
         if(a[mid]==a1)

@@ -34,13 +34,17 @@ class student
 
     void show_data()
     {
-        int tot;
-        cout<<"Enter the addimission number :";
-        cin>>admno;
-        getchar();
-        cout<<"Enter The Student Name :";
-        gets(sname);
-        ctotal(sub);     
+
+        int tot=total;
+        cout<<endl<<"Your Addmision number is :"<<admno;
+        cout<<endl<<"The Student Name is :"<<sname;
+        for(int i=0;i<3;i++)
+        {
+            cout<<endl<<"Student Subject "<<i+1<<" marks is :"<<sub[i];
+        }
+        cout<<endl<<"Student Obtained marks in three subject are : "<<tot;
+        
+          
     }
 
     
@@ -52,5 +56,7 @@ int main()
     student details;
 
     details.take_data();
+
+    details.show_data();
     
 }

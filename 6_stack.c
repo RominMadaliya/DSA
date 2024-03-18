@@ -6,6 +6,7 @@ void InsertEnd(int arr[],int a,int n)
 
     if (top >=a-1 )
     {
+
         printf("The Array is full\n");
     }
     else
@@ -95,7 +96,7 @@ int main()
     do
     {
 
-        printf("\nPress 1 for Insert Element");
+        printf("\nPress 1 for InsertEnd Element");
         printf("\nPress 2 for Delete Element");
         printf("\nPress 3 for Insert Element");
         printf("\nPress 4 for Delete Element");

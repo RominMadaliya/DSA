@@ -40,10 +40,9 @@ int main()
     int arr[n1];
     arr[n1]=rand();
 
-    for(int i=0;i<n1;i++)
-    {
-        arr[i]=(rand()%n1)+1;
-    }
+   
+   
+   
     printf("\n The Unsorted Array is :\n");
     for (int i=0;i<n1;i++)
     {
