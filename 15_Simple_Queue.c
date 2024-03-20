@@ -1,9 +1,50 @@
+// #include<stdio.h>
+// int front=-1;
+// int rear=-1;
+
+// void Insert_front(int arr[],int n,int num)
+// {
+// if(front==-1 && rear==-1)
+//     {
+//         front++;
+//         rear++;
+//         arr[rear]=num;
+//     }
+//  else if(rear>=n-1)
+//     {
+//         printf("The Array is full!");
+//     }
+//     else 
+//     {
+//         rear++;
+//         arr[rear]=num;
+//     }
+// }
+
+// void Delete_First(int arr[],int n)
+// {
+//     printf("\n");
+//     if (front < 0)
+//     {
+//         printf("The Array is empty\n");
+//     }
+//     else if(front==rear)
+//     {
+//         front=rear=-1;
+//     }
+//     else
+//     {
+//         front++;
+//     }
+// }
+
+
 #include<stdio.h>
 
 int first=-1;
 int rear=-1;
 
-void Insert_First(int arr[],int n,int num)
+void Insert_End(int arr[],int n,int num)
 {
     
     if(first==-1 && rear==-1)
@@ -24,6 +65,7 @@ void Insert_First(int arr[],int n,int num)
 
 }
 
+
 void Delete_First(int arr[],int n)
 {
     printf("\n");
@@ -41,9 +83,6 @@ void Delete_First(int arr[],int n)
     }
 }
 
-
-
-
 void Display(int arr[],int a)
 {
     if (first < 0)
@@ -54,54 +93,55 @@ void Display(int arr[],int a)
     {
         for (int i = first; i <= rear; i++)
         { 
-            printf("\nThe Array[%d] is : %d", i, arr[i]);
+            printf("%d  ", arr[i]);
         }
     }
     printf("\n");
 }
 
 
-
-
 int main()
 {
-        int n;
+    int n1;
+    printf("Enter the Sizeof the array : ");
+    scanf("%d", &n1);
 
-        printf("Enter the size of Array:");
-        scanf("%d",&n);
+    int arr[n1];
 
-        int arr[n];
+    int choice;
 
-        int choice;
+    do
+    {
+        printf("\nPress 1. For Insert the ELement");
+        printf("\nPress 2. For Delete the ELement");
+        printf("\nPress 3. For Display the ELement");
 
-        do{
-            printf("\nPress 1. For Insert the ELement");
-            printf("\nPress 2. For Delete the ELement");
-            printf("\nPress 3. For Display the ELement");
+        printf("\n\nEnter Your Choice:");
+        scanf("%d", &choice);
 
-           printf("\n\nEnter Your Choice:");
-           scanf("%d",&choice);
+        printf("\n");
 
-           printf("\n");
-
-           if(choice==1)
-           {
+        if (choice<0 || choice>3)
+        {
+            printf("\n Invalid Input!!!\n");
+        }
+        if (choice == 1)
+        {
             int num;
             printf("Enter the Element :");
             scanf("%d",&num);
-            Insert_First(arr,n,num);
-           }
+            Insert_End(arr, n1, num);
+        }
 
-           else if(choice==2)
-           {
-            Delete_First(arr,n);
-           }
-           else if (choice==3)
-           {
-             Display(arr,n);
-           }
-           
-    
-        }while(choice>0 || choice<=3);
+        else if (choice == 2)
+        {
+            Delete_First(arr, n1);
+        }
+        else if (choice == 3)
+        {
+            Display(arr, n1);
+        }
+
+    } while (choice > 0 || choice <= 3);
     return 0;
 }
