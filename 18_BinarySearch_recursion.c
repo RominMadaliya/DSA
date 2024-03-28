@@ -39,10 +39,10 @@ int BinarySearch_Recursion(int arr[], int size, int start, int end, int num)
         {
             if (arr[mid] == num)
             {
-                return 1;
+                return mid;
             }
              else if(arr[mid]>num)
-            {
+            {                                                                                  
             end=mid-1;
             mid=(start+end)/2;
             }
@@ -51,6 +51,8 @@ int BinarySearch_Recursion(int arr[], int size, int start, int end, int num)
             start=mid+1;
             mid=(start+end)/2;
             }
+
+            
         }
     }
             BinarySearch_Recursion(arr,size,start,end,num);
@@ -86,14 +88,14 @@ int main()
     
     int ans = BinarySearch_Recursion(arr, size, start, end, num);
 
-    if(ans==1)
+    if(ans>0)
     {
-        printf("The number is available in this array,and its position is %d ");
+        printf("The number is available in this array,and its position is : %d ",ans+1);
     }
-    else if(ans==0)
+    else
     {
-         printf("The number is unavailable in this array  : ");
+         printf("The number is unavailable in this array");
     }
 
     return 0;
-}
+}    

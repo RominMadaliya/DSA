@@ -4,7 +4,6 @@
 void Accending_Sorting(int arr[],int n1)
 {
     int temp=0;
-    int l,r;
 
     for(int j=1;j<=n1;j++)
     {
@@ -38,12 +37,17 @@ int main()
     scanf("%d",&n1);
 
     int arr[n1];
-    arr[n1]=rand();
-
+    
    
    
    
     printf("\n The Unsorted Array is :\n");
+    for (int i=0;i<n1;i++)
+    {
+      arr[i]=rand()%100+1;
+    }
+   
+
     for (int i=0;i<n1;i++)
     {
         printf("%d ",arr[i]);
