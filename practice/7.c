@@ -7,72 +7,68 @@ struct node
     struct node *next;
 };
 
-struct node *head = NULL;
+struct node* head=NULL;
+struct node* tail=NULL;
 
-void Insert_End(int val)
+void Insert_End(int num)
 {
-    struct node *ptr=head;
+    struct  node* temp=malloc(sizeof(struct node));
+    temp->data=num;
+    temp->next=head;
 
-    struct node *temp = malloc(sizeof(struct node));
-    temp->data=val;
-    temp->next=NULL;
-
-    if(head==NULL)
+    if(head==NULL && tail==NULL)
     {
         head=temp;
+        tail=temp;
         return;
     }
+    tail->next=temp;
+    tail=temp;
+}
 
-    while(ptr->next != NULL)
-    {
-        ptr=ptr->next;
-    }
-
-    ptr->next=temp;
-    return;
-
+void Insert_First(int num)
+{
+    struct  node* temp=malloc(sizeof(struct node));
+    temp->data=num;
+    temp->next=head;
+    head=temp;
+    tail->next=head;
 }
 
 void Delete_End()
 {
-    struct node* ptr=head;
-    struct node* p;
+    struct node* ptr=tail;
+    struct node* p=head;
 
-    if(head->next == NULL)
+    if(head==NULL)
     {
-        head=NULL;
-        free(ptr);
+        printf("\n\n The List Alaready Empty!!");
+    }
+    if(head==tail)
+    {
+        head=tail=NULL;
         return;
     }
-
-    while(ptr->next != NULL)
+    while(p->next != tail)
     {
-        p=ptr;
-        ptr=ptr->next;
+        p=p->next;
     }
-    p->next=NULL;
+    p->next=head;
+    tail=p;
     free(ptr);
-    return;
-}
-
-void Insert_First(int val)
-{
-    struct node* ptr=head;
-    struct node* temp=malloc(sizeof(struct node));
-    temp->data=val;
-    temp->next=head;
-    head=temp;
-
 }
 
 void Delete_First()
 {
+    if(head==NULL)
+    {
+        printf("\n\n The List Alaready Empty!!");
+    }
     struct node* ptr=head;
-    head=ptr->next;
-    free(ptr);
-
+    head=head->next;
+    tail->next=head;
+    free(ptr);  
 }
-
 void Insert_Mid(int num,int pos)
 {
     struct  node* ptr=head;
@@ -81,6 +77,7 @@ void Insert_Mid(int num,int pos)
     struct node* temp=malloc(sizeof(struct node));
     temp->data=num;
 
+    
     while(ptr->data != pos)
     {
         p=ptr;
@@ -105,29 +102,27 @@ void Delete_Mid(int pos)
     p->next=ptr->next;
     free(ptr);
 }
-
 void display()
 {
-    struct node *ptr=head;
+    struct node* ptr=head;
+    printf("\n");
 
-    if(head == NULL)
+    if(head==NULL)
     {
-        printf("The List is Alaready Empty....");
+        printf("\n\n The List Alaready Empty!!");
     }
     else
     {
-        while (ptr != NULL)
-        {
-            printf("%d ",ptr->data);
-            ptr=ptr->next;
-        }
-        
+    while(ptr != tail)
+    {
+        printf("%d ",ptr->data);
+        ptr=ptr->next;
     }
-    printf("\n\n");
+    printf("%d",ptr->data);
+    printf("\n");
+    }
+    
 }
-
-
-
 
 int main()
 {
