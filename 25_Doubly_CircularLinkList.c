@@ -248,4 +248,4 @@ int main()
         }
 
     } while (n > 0 || n <= 7);
-}
+}th
